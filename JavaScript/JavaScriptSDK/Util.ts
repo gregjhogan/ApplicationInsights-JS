@@ -363,5 +363,19 @@ module Microsoft.ApplicationInsights {
             
             return true;
         }
+
+        /**
+        * Returns the absolute url for a given url
+        */
+        public static getAbsoluteUrl = (function () {
+            var a;
+
+            return function (url) {
+                if (!a) a = document.createElement('a');
+                a.href = url;
+
+                return a.href;
+            };
+        })()
     }
 }
